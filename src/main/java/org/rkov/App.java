@@ -7,6 +7,8 @@ import org.rkov.geometry.Rectangle;
 import org.rkov.geometry.Triangle;
 import org.rkov.geometry.ports.AreaCalculator;
 import org.rkov.geometry.ports.PerimeterCalculator;
+import org.rkov.geometry.utils.Unit;
+import org.rkov.geometry.utils.UnitMeasurementValue;
 
 public class App 
 {
@@ -38,6 +40,16 @@ public class App
         printArea("triangle2", triangle2);
 
         printPerimeter("triangle2", triangle2);
+
+        UnitMeasurementValue value = new UnitMeasurementValue(Unit.METER, Unit.MILLIMETER);
+
+        figures.forEach((name, figure) -> {
+            var square = figure.getSquare();
+
+            var newValue = value.update(square);
+
+            System.out.println("From meter " + square + " to millimeter is: " + newValue);
+        });
     }
 
     private static void printArea(String name, AreaCalculator figure) {
