@@ -23,17 +23,28 @@ public class App
             "circle", circle
         );
 
-        figures.forEach((name, figure) -> {
-            System.out.println("Area of " + name + " is: " + figure.getSquare());
-        });
+        figures.forEach(App::printArea);
 
         Map<String, PerimeterCalculator> figuresPerimeter = Map.of(
             "rectangle", rectangle, 
             "triangle", triangle,
             "circle", circle
         );
-        figuresPerimeter.forEach((name, figure) -> {
-            System.out.println("Perimeter of " + name + " is: " + figure.getPerimeter());
-        });
+
+        figuresPerimeter.forEach(App::printPerimeter);
+
+        Triangle triangle2 = new Triangle(10);
+
+        printArea("triangle2", triangle2);
+
+        printPerimeter("triangle2", triangle2);
+    }
+
+    private static void printArea(String name, AreaCalculator figure) {
+        System.out.println("Area of " + name + " is: " + figure.getSquare());
+    }
+
+    private static void printPerimeter(String name, PerimeterCalculator figure) {
+        System.out.println("Perimeter of " + name + " is: " + figure.getPerimeter());
     }
 }
