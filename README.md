@@ -3,3 +3,7 @@
 Это приложение, которое использует библиотеку [geometry-library](https://github.com/rkov-itk/geometry-library).
 
 Он выводи информацию о площади и периметре разных фигур.
+
+## Результат
+
+![Screenshot](docs/img.png)]
