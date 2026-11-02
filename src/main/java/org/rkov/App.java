@@ -15,6 +15,7 @@ import org.rkov.geometry.utils.UnitMeasurementValue;
 
 public class App {
     public static void main(String[] args) {
+        // Создание фигур
         var rectangle = new Rectangle(10, 20);
         var triangle = new Triangle(5, 5, 6);
         var circle = new Circle(10);
@@ -42,6 +43,7 @@ public class App {
 
         printPerimeter("triangle2", triangle2);
 
+        // Использование модуля геометрической утилиты
         UnitMeasurementValue value = new UnitMeasurementValue(Unit.METER, Unit.MILLIMETER);
 
         figures.forEach((name, figure) -> {
@@ -52,6 +54,7 @@ public class App {
             System.out.println("From meter " + square + " to millimeter is: " + newValue);
         });
 
+        // Использование модуля геометрической 3D фигур
         var figures3D = Map.of(
                 "cube", new Cube(10),
                 "sphere", new Sphere(10),
